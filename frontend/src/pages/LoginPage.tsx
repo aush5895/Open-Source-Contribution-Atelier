@@ -205,16 +205,20 @@ export function LoginPage() {
         <button
           type="button"
           onClick={toggleTheme}
-          className="grid h-9 w-9 place-items-center rounded-lg border border-slate-300/80 bg-white/70 text-slate-600 transition hover:border-slate-400 hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-slate-600 dark:hover:text-white"
+          className="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300/80 bg-white/70 text-slate-600 transition hover:border-slate-400 hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-slate-600 dark:hover:text-white"
           aria-label={
             theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
           }
         >
-          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          {theme === "dark" ? (
+            <Sun size={16} className="shrink-0" aria-hidden="true" />
+          ) : (
+            <Moon size={16} className="shrink-0" aria-hidden="true" />
+          )}
         </button>
       </header>
       <main className="mx-auto min-h-[calc(100dvh-60px)] w-full max-w-6xl px-5 py-2 sm:px-8">
-        <div className="relative min-h-full w-full overflow-hidden rounded-[28px] border border-slate-900/10 bg-[#171923] shadow-[0_28px_80px_rgba(15,23,42,0.18)] dark:border-white/10">
+        <div className="relative flex min-h-[calc(100dvh-76px)] w-full flex-col overflow-hidden rounded-[28px] border border-slate-900/10 bg-[#171923] shadow-[0_28px_80px_rgba(15,23,42,0.18)] dark:border-white/10">
           <div className="absolute inset-0 opacity-[0.13] [background-image:linear-gradient(rgba(255,255,255,.38)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.38)_1px,transparent_1px)] [background-size:32px_32px]" />
           <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-3 font-mono text-[11px] text-slate-400 sm:px-6">
             <span className="flex items-center gap-2">
